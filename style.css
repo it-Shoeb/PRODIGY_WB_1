@@ -1,118 +1,144 @@
-:root{
-    --primary: #006eb8;
-    --secondary:#e2f2fd;
-    --tertiory:#304f64;
-    --text:#000000;
-    --hover:#7acaff;
+:root {
+  --primary: #006eb8;
+  --secondary: #e2f2fd;
+  --tertiory: #304f64;
+  --text: #000000;
+  --hover: #7acaff;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"); */
 
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-body{
-    font-family: 'Poppins';
+body {
+    /* font-family: "Poppins"; */
+    scroll-behavior: smooth;
 }
 
-li{
+li {
     list-style-type: none;
 }
 
-a{
+a {
     text-decoration: none;
     color: black;
 }
 
-section{
-    background-color: var(--tertiory);
+section {
+  background-color: var(--tertiory);
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 2rem;
+  border-bottom: var(--text) solid 1px;
+}
+
+.hamburger-container {
+  display: none;
+}
+
+header {
+}
+
+header .navbar,
+.nav-links {
+  display: flex;
+}
+
+header .navbar {
+  justify-content: space-between;
+  position: fixed;
+  background-color: var(--primary);
+  left: 0;
+  top: 0;
+  padding: 1rem 4rem;
+  width: 92%;
+}
+
+.nav-links li {
+  margin-inline: 0.5em;
+}
+.nav-links li a {
+  color: white;
+  position: relative;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 1.5px;
+  width: 20%;
+  background-color: var(--secondary);
+  transition: 1s;
+}
+.nav-links li a:hover::after {
+  transition: 1s;
+  width: 100%;
+}
+
+.nav-links li a.active::after {
+  width: 100%;
+}
+
+.cta-container a {
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  margin-inline: 0.5rem;
+}
+
+.sign-up {
+  border: solid 1px var(--secondary);
+  color: var(--secondary);
+}
+
+.login {
+  background-color: var(--secondary);
+  outline: none;
+  border: none;
+  color: var(--text);
+}
+
+.cta-container .cta:hover {
+  box-shadow: 3px 3px 1px 1px var(--tertiory);
+}
+
+.nav-left{
+    display: flex;
+    gap: 0 2rem;
+    align-items: center;
+}
+
+@media (max-width: 720px) {
+  .hamburger-container {
+    display: block;
+  }
+  .nav-links {
+    flex-direction: column;
+    background-color: #7acaff;
     width: 100%;
     height: 100vh;
-    display: grid;
-    place-content: center;
-    font-size: 4rem;
-    font-weight: bold;
-    color: white;
-    letter-spacing: 2rem;
-    border-bottom: var(--text) solid 1px;
-}
-
-.hamburger-container{
-    display: none;
-}
-
-header{
-}
-
-header .navbar, .nav-links{
-    display: flex;
-}
-
-header .navbar{
-    justify-content: space-between;
-    position: fixed;
-    background-color: var(--primary);
-    left: 0;
-    top: 0;
-    padding: 1rem 4rem;
-    width: 92%;
-}
-
-.nav-links li{
-    margin-inline: .5em;
-}
-.nav-links li a{
-    color: white;
-    position: relative;
-}
-
-.nav-links li a::after{
-    content: '';
     position: absolute;
-    left: 0;
-    bottom: -2px;
-    height: 1.5px;
-    width: 20%;
-    background-color: var(--secondary);
+    top: 0;
+    border-top-left-radius: 500px;
+    border-bottom-left-radius: 500px;
+    left: 200%;
+    align-items: center;
+    justify-content: center;
+    line-height: 3;
+    font-size: 1.5rem;
     transition: 1s;
-}
-.nav-links li a:hover::after{
-    transition: 1s;
-    width: 100%;
-}
+  }
 
-.nav-links li a.active::after{
-    width: 100%;
-}
-
-.cta-container a{
-    padding: .4rem 1rem;
-    border-radius: 4px;
-    margin-inline: .5rem;
-}
-.sign-up{
-    border: solid 1px var(--secondary);
-    color: var(--secondary);
-}
-
-.login{
-    background-color: var(--secondary);
-    outline: none;
-    border: none;
-    color: var(--text);
-}
-
-.cta-container .cta:hover{
-    box-shadow: 3px 3px 1px 1px var(--tertiory);
-}
-
-@media (max-width:720px){
-    .hamburger-container{
-        display: block;
-    }
-    .nav-links{
-        flex-direction: column;
-    }
+  header .navbar {
+    width: 82%;
+  }
 }
