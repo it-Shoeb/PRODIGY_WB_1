@@ -38,6 +38,7 @@ section {
   color: white;
   letter-spacing: 2rem;
   border-bottom: var(--text) solid 1px;
+  transition: all 1.5s;
 }
 
 .hamburger-container {
@@ -118,7 +119,7 @@ header .navbar {
 }
 
 @media (max-width: 720px) {
-  .hamburger-container {
+    .hamburger-container {
     display: block;
   }
   .nav-links {
@@ -139,6 +140,8 @@ header .navbar {
   }
 
   header .navbar {
-    width: 82%;
+    position: relative;
+    width: 100vw;
+    padding: .2rem;
   }
 }
